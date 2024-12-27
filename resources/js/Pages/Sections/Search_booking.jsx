@@ -230,7 +230,7 @@ export default function Search_booking() {
                                                     <label className="field-label">
                                                         Pickup Location
                                                     </label>
-                                                    <div className="category-oneadjust">
+                                                    <div className="category-oneadjust" class="form-control">
                                                         <select
                                                             name="cate"
                                                             className="category"

@@ -29,7 +29,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/f_contact', [HomeController::class, 'contact'])->name('f_contact');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/carlist', [HomeController::class, 'carlist'])->name('carlist');
-Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
+//Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -55,40 +55,14 @@ Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 
 //Laravel & React Routing
 
-// Route::get('/', function () {
-//     return view('frontend.home');
-// });
-
-// Route::get('/about', function () {
-//     return view('frontend.about');
-// });
-
-
-//Frontend Side Route
-
-// Route::get('/', [HomeController::class,'index'])->name('home');
-// Route::get('/car', [HomeController::class,'car_show'])->name('car');
-// Route::view('/about', 'frontend.about')->name('about');
-// Route::view('/gallery', 'frontend.gallery')->name('gallery');
-// Route::view('/faq', 'frontend.faq')->name('faq');
-// Route::view('/booking', 'frontend.booking')->name('booking');
-// Route::view('/contact_us', 'frontend.contact_us')->name('contact_us');
-// Route::view('/blog', 'frontend.blog')->name('blog');
-// Route::view('/blog_details', 'frontend.blog_details')->name('blog_details');
-// Route::view('/car_sidebar', 'frontend.car_sidebar')->name('car_sidebar');
-// Route::view('/car_details', 'frontend.car_details')->name('car_details');
-
-
-
 //Frontend Side Booking
 
-// Route::get('/booking', [BookingController::class,'create'])->name('book.create');
-// Route::post('/booking', [BookingController::class,'store'])->name('book.store');
+Route::get('/booking', [BookingController::class,'create'])->name('book.create');
+Route::post('/booking', [BookingController::class,'store'])->name('book.store');
 
 //Contact Us Route
 
 Route::resource('/contact', ContactController::class);
-
 
 
 //Admin Dashboard

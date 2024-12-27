@@ -13,8 +13,8 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $car_lists = CarList::take(9)->get();
-        return Inertia::render('Home',compact('car_lists'));
+        $carlists = CarList::take(9)->get();
+        return Inertia::render('Home',compact('carlists'));
     }
 
     public function about(){
@@ -30,13 +30,13 @@ class HomeController extends Controller
     }
 
     public function carlist(){
-        $car_lists = CarList::all();
-        return Inertia::render('Carlist',compact('car_lists'));
+        $carlists = CarList::all();
+        return Inertia::render('Carlist',compact('carlists'));
     }
     public function booking(){
-        $car_lists = CarList::all();
+        $carlists = CarList::all();
         $drivers = Driver::all();
-        return Inertia::render('Booking',compact('car_lists','drivers'));
+        return Inertia::render('Booking',compact('carlists','drivers'));
     }
 
 }

@@ -7,6 +7,9 @@ use App\Models\Booking;
 use App\Models\CarList;
 use App\Models\Driver;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+
+
 
 class BookingController extends Controller
 {
@@ -19,11 +22,12 @@ class BookingController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-{
-    $drivers = Driver::all();
-    $carlists = CarList::all();
-    return view('frontend.booking', compact('carlists','drivers'));
-}
+    {
+        $drivers = Driver::all();
+        $carlists = CarList::all();
+        return Inertia::render('Booking', compact('carlists', 'drivers'));
+        //return view('frontend.booking', compact('carlists','drivers'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -51,7 +55,9 @@ class BookingController extends Controller
         $app->save();
 
         return redirect()->back()->with('msg', 'Successfully Booking Done');
+        //return response()->json(['msg' => 'Successfully Booking Done']);
     }
+
 
     /**
      * Display the specified resource.

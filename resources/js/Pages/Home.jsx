@@ -5,7 +5,7 @@ import Search_booking from "./Sections/Search_booking";
 import { Link, usePage } from "@inertiajs/react";
 
 export default function Home() {
-    const{car_lists} = usePage().props;
+    const{carlists} = usePage().props;
     return (
         <>
             <div>
@@ -35,7 +35,7 @@ export default function Home() {
 
                         <div className="row">
                             {/* Loop Start */}
-                            {car_lists.map(({id, brand, model, engine, price_per_day, image, status}) => (
+                            {carlists.map(({id, brand, model, engine, price_per_day, image, status}) => (
                             <div
                                 className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp"
                                 data-wow-delay=".3s">
@@ -100,7 +100,7 @@ export default function Home() {
                                             </ul>
                                         </div>
                                         <Link
-                                            href={route('booking')}
+                                            href={route('book.create')}
                                             className="theme-btn bg-color w-100 text-center">
                                             Book Now
                                             <i className="fa-solid fa-arrow-right ps-1" />

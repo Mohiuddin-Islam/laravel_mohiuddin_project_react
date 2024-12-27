@@ -257,9 +257,8 @@ export default function Header() {
                                         <i className="fa-regular fa-magnifying-glass" />
                                     </a>
                                     <div className="header-button">
-                                        <Link href={route('booking')}
-                                            className="theme-btn"
-                                        >
+                                        <Link href={route('book.create')}
+                                            className="theme-btn">
                                             Booking a Car
                                         </Link>
                                     </div>

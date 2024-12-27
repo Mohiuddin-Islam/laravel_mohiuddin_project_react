@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Sections/Header";
 import Search_area from "./Sections/Search_area";
+import { Link } from "@inertiajs/react";
 
 
 export default function About() {
@@ -183,7 +184,7 @@ export default function About() {
                             <div className="car-sale-content">
                                 <h2 className="wow fadeInUp" data-wow-delay=".3s">Sale 50% Off</h2>
                                 <h3 className="wow fadeInUp" data-wow-delay=".5s">on all rental cars for 1 month</h3>
-                                <a href={route('booking')} className="theme-btn bg-header wow fadeInUp" data-wow-delay=".7s">Book Your Car</a>
+                                <Link href={route('book.create')} className="theme-btn bg-header wow fadeInUp" data-wow-delay=".7s">Book Your Car</Link>
                             </div>
                         </div>
                     </div>
@@ -367,4 +368,3 @@ export default function About() {
         </>
     );
 }
-
