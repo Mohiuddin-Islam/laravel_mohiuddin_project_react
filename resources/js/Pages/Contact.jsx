@@ -1,8 +1,26 @@
 import React from 'react'
 import Header from './Sections/Header'
 import Search_area from './Sections/Search_area'
+import { useForm } from "@inertiajs/react";
 
 export default function Contact() {
+
+    const { data, setData, post, errors } = useForm({
+        name: "",
+        email: "",
+        subject: "",
+        phone: "",
+        details: "",
+        
+    })
+
+    //console.log(data)
+
+    function handelSubmit(e) {
+        e.preventDefault();
+        post(route("f_contact"));
+    }
+
     return (
         <>
             <div>
@@ -46,31 +64,37 @@ export default function Contact() {
                                                 Drop us a Line
                                             </h2>
                                         </div>
-                                        <form action="#" id="contact-form" method="POST" className="contact-form-items mt-5 mt-md-0">
+
+                                        <form onSubmit={handelSubmit} id="contact-form" method="POST" className="contact-form-items mt-5 mt-md-0">
                                             <div className="row g-4">
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="name" id="name" placeholder="Your Name" />
+                                                        <input type="text" name="name" id="name" placeholder="Your Name" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
+                                                        <span className="text-red-600">{errors.name}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="email" id="email2" placeholder="Your Email" />
+                                                        <input type="text" name="email" id="email2" placeholder="Your Email" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
+                                                        <span className="text-red-600">{errors.email}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="subject" id="subject" placeholder="Subject" />
+                                                        <input type="text" name="subject" id="subject" placeholder="Subject" value={data.subject} onChange={(e) => setData("subject", e.target.value)}/>
+                                                        <span className="text-red-600">{errors.subject}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="phone" id="phone" placeholder="Phone" />
+                                                        <input type="text" name="phone" id="phone" placeholder="Phone" value={data.phone} onChange={(e) => setData("phone", e.target.value)}/>
+                                                        <span className="text-red-600">{errors.phone}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12">
                                                     <div className="form-clt">
-                                                        <textarea name="message" id="message" placeholder="Write a Comment" defaultValue={""} />
+                                                        <textarea name="details" id="message" placeholder="Write a Comment" value={data.details} onChange={(e) => setData("details", e.target.value)}/>
+                                                        <span className="text-red-600">{errors.details}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">

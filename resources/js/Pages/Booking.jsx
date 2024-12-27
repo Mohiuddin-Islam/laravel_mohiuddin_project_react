@@ -14,7 +14,7 @@ export default function Booking() {
     date: "",
   })
 
-  console.log(data)
+  //console.log(data)
 
   function handelSubmit(e) {
     e.preventDefault();
@@ -264,7 +264,7 @@ export default function Booking() {
                           <div className="form-clt">
                             <label className="label-text">Date</label>
                             <div id="datepicker4" className="input-group date" data-date-format="dd-mm-yyyy">
-                              <input type="date" class="form-control" name='date' value={
+                              <input type="date" className="form-control" name='date' value={
                                 data.date
                               }
                                 onChange={(e) =>

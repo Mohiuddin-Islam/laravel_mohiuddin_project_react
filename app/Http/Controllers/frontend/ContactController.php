@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ContactController extends Controller
 {
@@ -22,7 +23,9 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('frontend.contact_us');
+        
+        return Inertia::render('Contact');
+        
     }
 
     /**

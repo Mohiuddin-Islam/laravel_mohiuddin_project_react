@@ -60,9 +60,12 @@ Route::get('/carlist', [HomeController::class, 'carlist'])->name('carlist');
 Route::get('/booking', [BookingController::class,'create'])->name('book.create');
 Route::post('/booking', [BookingController::class,'store'])->name('book.store');
 
-//Contact Us Route
-
+//Contact Us Route(Backend side)
 Route::resource('/contact', ContactController::class);
+
+// Frontend to Backend
+Route::post('/f_contact', [ContactController::class, 'store'])->name('f_contact');
+
 
 
 //Admin Dashboard
