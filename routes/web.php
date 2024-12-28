@@ -31,6 +31,7 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/carlist', [HomeController::class, 'carlist'])->name('carlist');
 //Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
 
+
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),

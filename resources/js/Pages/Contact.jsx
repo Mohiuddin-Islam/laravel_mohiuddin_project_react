@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from './Sections/Header'
 import Search_area from './Sections/Search_area'
-import { useForm } from "@inertiajs/react";
+import { useForm, usePage } from "@inertiajs/react";
+
 
 export default function Contact() {
-
-    const { data, setData, post, errors } = useForm({
+    const {props} = usePage();
+    const {flash} = props;
+    const { data, setData, post, errors, reset } = useForm({
         name: "",
         email: "",
         subject: "",
@@ -18,7 +20,9 @@ export default function Contact() {
 
     function handelSubmit(e) {
         e.preventDefault();
-        post(route("f_contact"));
+        post(route("f_contact"),{
+            onSuccess: () => reset(),
+        });
     }
 
     return (
@@ -56,6 +60,7 @@ export default function Contact() {
                         <div className="contact-wrapper-area">
                             <div className="row g-4">
                                 <div className="col-lg-9">
+                                {flash.msg && ( <div className="alert alert-success"> {flash.msg}</div>)}
                                     <div className="contact-content">
                                         <div className="section-title">
                                             <img src="assets/img/sub-icon.png" alt="icon-img" className="wow fadeInUp" />

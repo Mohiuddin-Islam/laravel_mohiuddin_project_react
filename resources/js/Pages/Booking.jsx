@@ -3,8 +3,10 @@ import Header from './Sections/Header'
 import { usePage, useForm } from "@inertiajs/react";
 
 export default function Booking() {
+  const {props} = usePage();
+  const {flash} = props;
   const { carlists, drivers } = usePage().props;
-  const { data, setData, post, errors } = useForm({
+  const { data, setData, post, errors, reset } = useForm({
     name: "",
     email: "",
     phone: "",
@@ -18,7 +20,9 @@ export default function Booking() {
 
   function handelSubmit(e) {
     e.preventDefault();
-    post(route("book.store"));
+    post(route("book.store"),{
+      onSuccess: () => reset(),
+  });
   }
   return (
     <>
@@ -154,7 +158,8 @@ export default function Booking() {
                   </div>
                   <div className="car-booking-items">
                     <div className="booking-header">
-                    
+
+                    {flash.msg && ( <div className="alert alert-success"> {flash.msg}</div>)}
                       <h3>Request for Booking</h3>
                       <p>Send your requirement to us. We will check email and contact you soon.</p>
                     </div>
@@ -164,7 +169,7 @@ export default function Booking() {
                         <div className="col-lg-6">
                           <div className="form-clt">
                             <label className="label-text">Your Name</label>
-                            <input type="text" name="name" id="name" placeholder="Afzaal Islam" value={data.name}
+                            <input type="text" name="name" id="name" placeholder="Enter Name" value={data.name}
                               onChange={(e) =>
                                 setData(
                                   "name",
@@ -180,7 +185,7 @@ export default function Booking() {
                         <div className="col-lg-6">
                           <div className="form-clt">
                             <label className="label-text">Email</label>
-                            <input type="text" name="email" id="email" placeholder="pixydrops@gmail.com" value={data.email}
+                            <input type="text" name="email" id="email" placeholder="Enter Email" value={data.email}
                               onChange={(e) =>
                                 setData(
                                   "email",
@@ -196,7 +201,7 @@ export default function Booking() {
                         <div className="col-lg-6">
                           <div className="form-clt">
                             <label className="label-text">Phone Number</label>
-                            <input type="text" name="phone" id="phone" placeholder="+ 00 0000 - 000" value={data.phone}
+                            <input type="text" name="phone" id="phone" placeholder="Enter Number" value={data.phone}
                               onChange={(e) =>
                                 setData(
                                   "phone",
