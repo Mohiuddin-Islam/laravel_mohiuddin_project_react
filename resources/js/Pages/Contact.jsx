@@ -69,31 +69,31 @@ export default function Contact() {
                                             <div className="row g-4">
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="name" id="name" placeholder="Your Name" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
+                                                        <input type="text" name="name" id="name" placeholder="Your Name" required value={data.name} onChange={(e) => setData("name", e.target.value)}/>
                                                         <span className="text-red-600">{errors.name}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="email" id="email2" placeholder="Your Email" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
+                                                        <input type="text" name="email" id="email2" placeholder="Your Email" required value={data.email} onChange={(e) => setData("email", e.target.value)}/>
                                                         <span className="text-red-600">{errors.email}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="subject" id="subject" placeholder="Subject" value={data.subject} onChange={(e) => setData("subject", e.target.value)}/>
+                                                        <input type="text" name="subject" id="subject" placeholder="Subject" required value={data.subject} onChange={(e) => setData("subject", e.target.value)}/>
                                                         <span className="text-red-600">{errors.subject}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-6">
                                                     <div className="form-clt">
-                                                        <input type="text" name="phone" id="phone" placeholder="Phone" value={data.phone} onChange={(e) => setData("phone", e.target.value)}/>
+                                                        <input type="text" name="phone" id="phone" placeholder="Phone" required value={data.phone} onChange={(e) => setData("phone", e.target.value)}/>
                                                         <span className="text-red-600">{errors.phone}</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-12">
                                                     <div className="form-clt">
-                                                        <textarea name="details" id="message" placeholder="Write a Comment" value={data.details} onChange={(e) => setData("details", e.target.value)}/>
+                                                        <textarea name="details" id="message" placeholder="Write a Comment" required value={data.details} onChange={(e) => setData("details", e.target.value)}/>
                                                         <span className="text-red-600">{errors.details}</span>
                                                     </div>
                                                 </div>
