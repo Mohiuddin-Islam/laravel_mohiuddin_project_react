@@ -60,6 +60,7 @@ export default function Contact() {
                         <div className="contact-wrapper-area">
                             <div className="row g-4">
                                 <div className="col-lg-9">
+                                    {/* Alert Message */}
                                 {flash.msg && ( <div className="alert alert-success"> {flash.msg}</div>)}
                                     <div className="contact-content">
                                         <div className="section-title">

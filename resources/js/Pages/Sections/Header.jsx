@@ -143,13 +143,13 @@ export default function Header() {
                             <div className="header-top-right">
                                 <ul className="top-list">
                                     <li>
-                                        <Link href={route('f_contact')}>Help</Link>
+                                        <Link href='#' style={{color:'rgb(255, 193, 69)'}}>Login</Link>
                                     </li>
                                     <li>
-                                        <Link href={route('f_contact')}>Support</Link>
+                                        <Link href='#' style={{color:'rgb(21, 245, 186)'}}>Registration</Link>
                                     </li>
                                     <li>
-                                        <Link href={route('f_contact')}>Contact</Link>
+                                        <Link href='#' style={{color:'rgb(255, 41, 41)'}}>LogOut</Link>
                                     </li>
                                 </ul>
                                 <div className="social-icon d-flex align-items-center">

@@ -158,7 +158,7 @@ export default function Booking() {
                   </div>
                   <div className="car-booking-items">
                     <div className="booking-header">
-
+                  {/* Alert Message */}
                     {flash.msg && ( <div className="alert alert-success"> {flash.msg}</div>)}
                       <h3>Request for Booking</h3>
                       <p>Send your requirement to us. We will check email and contact you soon.</p>

@@ -85,6 +85,7 @@ export default function Carlist() {
                                                 </li>
                                             </ul>
                                         </div>
+                                        
                                         <a href={route('book.create')} className="theme-btn bg-color w-100 text-center">Book Now <i className="fa-solid fa-arrow-right ps-1" /></a>
                                     </div>
                                 </div>
